@@ -1,0 +1,14 @@
+beforeDevise branch is accurate
+master is not
+so replace master with beforeDevise using ours method
+
+used the git ours method to fix master branch and reflect beforeDevise changes as follows: 
+
+git checkout beforeDevise
+git merge -s ours master
+git checkout master
+git merge beforeDevise
+
+git push
+
+now should have all of beforeDevise branch changes in master
