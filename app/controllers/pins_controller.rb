@@ -1,6 +1,13 @@
 class PinsController < ApplicationController
-  # show all pins
+  # only use find_pin for the following:
+  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+
+  # show all pins (index.html.haml)
   def index
+  end
+
+  # view 1 pin by params
+  def show
   end
 
   # create 1 new pin renders _form.html.haml
@@ -20,8 +27,15 @@ class PinsController < ApplicationController
   end
 
   private
+  
   # required params as well as permitted, used in create
   def pin_params
     params.require(:pin).permit(:title, :description)
   end
+
+  # for show above
+  def find_pin
+    @pin = Pin.find(params[:id])
+  end
+
 end

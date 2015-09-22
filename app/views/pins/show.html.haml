@@ -1,0 +1,7 @@
+/ show.html.haml    
+/ note: haml requires = touch tag aka %h1=
+%h1= @pin.title
+%p= @pin.description
+
+/ = link_to "Back", root_path
+= render 'back'
