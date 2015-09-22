@@ -6,7 +6,10 @@ gem 'bootstrap-sass'
 gem 'haml', '4.0.5'
 gem 'simple_form'
 # https://github.com/plataformatec/devise     rails generate devise:install
-gem 'devise', '~> 3.3.0'
+# gem 'devise', '~> 3.3.0'
+  # not working
+gem 'devise', '~> 3.5.2'
+# gem 'devise'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
