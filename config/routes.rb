@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root "pins#index"
   resources :pins
-
+  root "pins#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

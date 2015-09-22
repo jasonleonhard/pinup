@@ -1,0 +1,27 @@
+!!! 5
+%html 
+%head 
+  %title Pin Board
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+%body 
+  - flash.each do |name, msg|
+    = content_tag :div, msg, class: "alert alert-info"
+  
+  = yield 
+
+// <!DOCTYPE html>
+// <html>
+// <head>
+//   <title>Pinup</title>
+//   < % = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true % >
+//   < % = javascript_include_tag 'application', 'data-turbolinks-track' => true % >
+//   < % = csrf_meta_tags % >
+// </head>
+// <body>
+
+// <%= yield %>
+
+// </body>
+// </html>

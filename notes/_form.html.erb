@@ -26,7 +26,7 @@
   <% if @pin.errors.any? %>
     <div id="errors">
       <h2></h2>
-      <%= pluralize(@pin.errors.count, "error") # pluralize singular  %>
+      <%= pluralize(@pin.errors.count, "error") %> <!-- pluralize singular  -->
       prevented this Pin from saving
       <ul>
         <% @pin.errors.full_messages.each do |msg| %>

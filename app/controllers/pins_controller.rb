@@ -1,11 +1,20 @@
 class PinsController < ApplicationController
 
   def index
-    @pins = Pin.new
+  end
+
+  def new
+    @pin = Pin.new
   end
 
   def create
-    @pins = Pin.new(pin_params)
+    @pin = Pin.new(pin_params)
+
+    if @pin.save
+      redirect_to @pin, notice: "Created new Pin!"
+    else
+      render 'new'
+    end
   end
 
 
