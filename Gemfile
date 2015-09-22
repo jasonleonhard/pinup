@@ -2,15 +2,16 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
+# https://github.com/twbs/bootstrap-sass; bundle install 
+  # application.css.scss (ordered)
+    # @import "bootstrap-sprockets"; @import "bootstrap";
+  # application.js (ordered)
+    # //= require jquery, //= require jquery_ujs, //= require bootstrap-sprockets
 gem 'bootstrap-sass'
 gem 'haml', '4.0.5'
 gem 'simple_form'
-# gem 'devise' 
-gem 'devise', '~> 3.5.2'
 # recommend by rubygems.org
-
-
-
+gem 'devise', '~> 3.5.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
