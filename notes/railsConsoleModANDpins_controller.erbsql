@@ -1,0 +1,46 @@
+-- bc user and pin id's are currently nil....
+
+-- rails console # output
+
+Loading development environment (Rails 4.2.3)
+>> @pin
+=> nil
+>> @pin = Pin.first
+  Pin Load (0.1ms)  SELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" ASC LIMIT 1
+=> #<Pin id: 1, title: "asdfdsaf", description: "asefdsafds", created_at: "2015-09-22 21:56:33", updated_at: "2015-09-22 21:56:33", user_id: nil>
+>> @user
+=> nil
+>> @user = User.first
+  User Load (0.2ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+=> #<User id: 1, email: "lox@gmail.com", encrypted_password: "$2a$10$OCYR5qpzQoSfqNEQo0YfcOmFe58eQib58PNUNUAfpiu...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-22 21:59:05", last_sign_in_at: "2015-09-22 21:59:05", current_sign_in_ip: "::1", last_sign_in_ip: "::1", created_at: "2015-09-22 21:59:05", updated_at: "2015-09-22 21:59:05">
+>> @user
+=> #<User id: 1, email: "lox@gmail.com", encrypted_password: "$2a$10$OCYR5qpzQoSfqNEQo0YfcOmFe58eQib58PNUNUAfpiu...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-22 21:59:05", last_sign_in_at: "2015-09-22 21:59:05", current_sign_in_ip: "::1", last_sign_in_ip: "::1", created_at: "2015-09-22 21:59:05", updated_at: "2015-09-22 21:59:05">
+>> @pin
+=> #<Pin id: 1, title: "asdfdsaf", description: "asefdsafds", created_at: "2015-09-22 21:56:33", updated_at: "2015-09-22 21:56:33", user_id: nil>
+>> @pin.user = @user
+=> #<User id: 1, email: "lox@gmail.com", encrypted_password: "$2a$10$OCYR5qpzQoSfqNEQo0YfcOmFe58eQib58PNUNUAfpiu...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-22 21:59:05", last_sign_in_at: "2015-09-22 21:59:05", current_sign_in_ip: "::1", last_sign_in_ip: "::1", created_at: "2015-09-22 21:59:05", updated_at: "2015-09-22 21:59:05">
+>> @pin
+=> #<Pin id: 1, title: "asdfdsaf", description: "asefdsafds", created_at: "2015-09-22 21:56:33", updated_at: "2015-09-22 21:56:33", user_id: 1>
+>> @pin.save
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  UPDATE "pins" SET "user_id" = ?, "updated_at" = ? WHERE "pins"."id" = ?  [["user_id", 1], ["updated_at", "2015-09-22 22:29:55.313294"], ["id", 1]]
+   (0.8ms)  commit transaction
+=> true
+
+
+>> @pin = Pin.last
+  Pin Load (0.2ms)  SELECT  "pins".* FROM "pins"  ORDER BY "pins"."id" DESC LIMIT 1
+=> #<Pin id: 2, title: "asdfdsffds", description: "asdfdsfadsafasdf", created_at: "2015-09-22 21:56:43", updated_at: "2015-09-22 21:56:43", user_id: nil>
+>> @pin = Pin.find(2)
+  Pin Load (0.2ms)  SELECT  "pins".* FROM "pins" WHERE "pins"."id" = ? LIMIT 1  [["id", 2]]
+=> #<Pin id: 2, title: "asdfdsffds", description: "asdfdsfadsafasdf", created_at: "2015-09-22 21:56:43", updated_at: "2015-09-22 21:56:43", user_id: nil>
+>> @user = User.first
+  User Load (0.2ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+=> #<User id: 1, email: "lox@gmail.com", encrypted_password: "$2a$10$OCYR5qpzQoSfqNEQo0YfcOmFe58eQib58PNUNUAfpiu...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-22 21:59:05", last_sign_in_at: "2015-09-22 21:59:05", current_sign_in_ip: "::1", last_sign_in_ip: "::1", created_at: "2015-09-22 21:59:05", updated_at: "2015-09-22 21:59:05">
+>> @pin.user = @user
+=> #<User id: 1, email: "lox@gmail.com", encrypted_password: "$2a$10$OCYR5qpzQoSfqNEQo0YfcOmFe58eQib58PNUNUAfpiu...", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2015-09-22 21:59:05", last_sign_in_at: "2015-09-22 21:59:05", current_sign_in_ip: "::1", last_sign_in_ip: "::1", created_at: "2015-09-22 21:59:05", updated_at: "2015-09-22 21:59:05">
+>> @pin.save
+   (0.1ms)  begin transaction
+  SQL (0.2ms)  UPDATE "pins" SET "user_id" = ?, "updated_at" = ? WHERE "pins"."id" = ?  [["user_id", 1], ["updated_at", "2015-09-22 22:39:38.147078"], ["id", 2]]
+   (2.1ms)  commit transaction
+=> true

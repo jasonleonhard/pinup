@@ -2,6 +2,8 @@
 / note: haml requires = touch tag aka %h1=
 %h1= @pin.title
 %p= @pin.description
+Submitted by 
+= @pin.user.email  # Submitted by lox@gmail.com        # for /pins/1
 
 / = link_to "Back", root_path
 = render 'back'

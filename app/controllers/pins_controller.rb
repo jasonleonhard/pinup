@@ -15,12 +15,16 @@ class PinsController < ApplicationController
 
   # create 1 new pin renders _form.html.haml
   def new
-    @pin = Pin.new
+    # @pin = Pin.new
+    # devise version
+    @pin = current_user.pins.build
   end
 
   # if able to save, renders notice, else renders new (aka _form)
   def create
-    @pin = Pin.new(pin_params)
+    # @pin = Pin.new(pin_params)
+    # devise version
+    @pin = current_user.pins.build(pin_params)
     # create redirects back to pin root, aka index
     if @pin.save
       redirect_to @pin, notice: "Created new Pin!"
