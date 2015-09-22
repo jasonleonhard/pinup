@@ -21,12 +21,31 @@ class PinsController < ApplicationController
   # if able to save, renders notice, else renders new (aka _form)
   def create
     @pin = Pin.new(pin_params)
-
+    # create redirects back to pin root, aka index
     if @pin.save
       redirect_to @pin, notice: "Created new Pin!"
     else
       render 'new'
     end
+  end
+
+  # renders _form
+  def edit
+  end
+  
+  # before_action covers this, finds pin before
+  def update
+    # update redirects back to pin root on success, aka index
+    if @pin.update(pin_params)
+      redirect_to @pin, notice: "Updated Pin!"
+    # or renders edit, aka _form
+    else
+      render 'edit'
+    end
+  end
+  
+  # 
+  def destroy
   end
 
   private
