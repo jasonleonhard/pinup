@@ -1,23 +1,30 @@
 !!! 5
 %html
 %head
-  %title Pin Board
+  %title Pinup Board
   = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
   = javascript_include_tag 'application', 'data-turbolinks-track' => true
   = csrf_meta_tags
 %body
+  / navbar    notice you did not create a _navbar partial, navbar is ready when you add bootstrap automatically!
   %nav.navbar.navbar-default
+    
     .container
-      .navbar-brand= link_to "Pin Board", root_path
+      .navbar-brand= link_to "Pinup Board", root_path
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
+          /users/new
           %li= link_to "New Pin", new_pin_path
-          %li= link_to "Account", edit_user_registration_path
+          /users/edit
+          %li= link_to "Account", edit_user_registration_path 
+          /   signout and return to root_path
           %li= link_to "Sign Out", destroy_user_session_path, method: :delete
       - else
         %ul.nav.navbar-nav.navbar-right
           %li= link_to "Sign Up", new_user_registration_path
+          /users/sign_in
           %li= link_to "Sign In", new_user_session_path
+  / flash messages that clarify success and failures
   .container
     - flash.each do |name, msg|
       = content_tag :div, msg, class: "alert alert-info"
