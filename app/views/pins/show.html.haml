@@ -1,5 +1,7 @@
 / show.html.haml    
 / note: haml requires = touch tag aka %h1=
+= image_tag @pin.image.url(:medium)
+
 %h1= @pin.title
 %p= @pin.description
 Submitted by 

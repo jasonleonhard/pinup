@@ -58,7 +58,7 @@ class PinsController < ApplicationController
   
   # required params as well as permitted, used in create
   def pin_params
-    params.require(:pin).permit(:title, :description)
+    params.require(:pin).permit(:title, :description, :image)
   end
 
   # for show above

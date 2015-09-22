@@ -12,6 +12,9 @@ gem 'haml', '4.0.5'
 gem 'simple_form'
 # recommend by rubygems.org
 gem 'devise', '~> 3.5.2'
+# user uploading images now possible   https://github.com/thoughtbot/paperclip
+gem 'paperclip', '~> 4.3.1'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
