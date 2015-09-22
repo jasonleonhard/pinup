@@ -5,6 +5,11 @@ gem 'rails', '4.2.3'
 gem 'bootstrap-sass'
 gem 'haml', '4.0.5'
 gem 'simple_form'
+# gem 'devise' 
+gem 'devise', '~> 3.5.2'
+# recommend by rubygems.org
+
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
