@@ -4,6 +4,9 @@ class PinsController < ApplicationController
 
   # show all pins (index.html.haml)
   def index
+    # define each method to show all pins in index
+    # will render a link on index with the title of the pin
+    @pins = Pin.all.order("created_at DESC")
   end
 
   # view 1 pin by params
