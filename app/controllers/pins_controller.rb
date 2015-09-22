@@ -44,8 +44,10 @@ class PinsController < ApplicationController
     end
   end
   
-  # 
+  # before action finds correct pin in all of these (show edit update and destroy)
   def destroy
+    @pin.destroy
+    redirect_to root_path
   end
 
   private
