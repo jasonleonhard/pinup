@@ -40,9 +40,6 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
 gem 'figaro'
 
-gem 'pg'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -67,6 +64,8 @@ group :test do
 end
 
 group :development, :test do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
@@ -103,6 +102,8 @@ end
 group :production do
   # heroku
   gem 'rails_12factor'
+  gem 'pg'
+
   # Use Unicorn as the app server https://github.com/defunkt/unicorn
   gem 'unicorn'
   # Use Capistrano for deployment
