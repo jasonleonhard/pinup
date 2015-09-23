@@ -40,8 +40,9 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
 gem 'figaro'
 
+gem 'pg'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -59,27 +60,25 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :test do
+  gem 'factory_girl_rails'
+end
 
 group :development, :test do
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # gem 'byebug'
+  # gem 'rspec-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
-    # UML diagraming with 
+  # UML diagraming with 
   gem "rails-erd" 
   # https://github.com/voormedia/rails-erd -> .pdf
   # brew install graphviz    
@@ -99,5 +98,11 @@ group :development, :test do
   # cmd-shift-p View...
     # can also affect xml .svgs simliar to html
     # css, js....
+end
 
+group :production do
+  # Use Unicorn as the app server https://github.com/defunkt/unicorn
+  gem 'unicorn'
+  # Use Capistrano for deployment
+  # gem 'capistrano-rails', group: :development
 end
