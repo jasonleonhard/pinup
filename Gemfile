@@ -101,6 +101,8 @@ group :development, :test do
 end
 
 group :production do
+  # heroku
+  gem 'rails_12factor'
   # Use Unicorn as the app server https://github.com/defunkt/unicorn
   gem 'unicorn'
   # Use Capistrano for deployment
