@@ -1,3 +1,5 @@
+![pinup icon](https://github.com/un5t0ppab13/golb/blob/master/app/assets/images/Screenshot.png)
+
 == README
 
 This README would normally document whatever steps are necessary to get the

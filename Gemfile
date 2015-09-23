@@ -70,4 +70,26 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+    # UML diagraming with 
+  gem "rails-erd" 
+  # https://github.com/voormedia/rails-erd -> .pdf
+  # brew install graphviz    
+  # bundle exec erd
+  # rake erd
+  # cmd-p erd.pdf 
+  gem 'railroady'
+  # https://github.com/preston/railroady   -> xml .svg
+  # brew install graphviz
+  # …and then run the master rake task…
+  # rake diagram:all
+  # Generate diagram for models and controllers including those in the engines.
+  # rake diagram:all_with_engines
+  # cmd-p .svg
+  # open one
+  # in /docs/ creates *.svgs 
+  # cmd-shift-p View...
+    # can also affect xml .svgs simliar to html
+    # css, js....
+
 end
