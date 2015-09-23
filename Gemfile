@@ -64,8 +64,6 @@ group :test do
 end
 
 group :development, :test do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
@@ -98,6 +96,10 @@ group :development, :test do
     # can also affect xml .svgs simliar to html
     # css, js....
 end
+
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 
 group :production do
   # heroku
