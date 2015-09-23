@@ -29,8 +29,10 @@ gem 'masonry-rails', '~> 0.2.4'
   #   end
   # end
 # pins_controller.rb 
-  
 gem 'acts_as_votable', '~> 0.10.0'
+# https://stripe.com/docs/checkout/guides/rails
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
