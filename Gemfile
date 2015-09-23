@@ -14,6 +14,9 @@ gem 'simple_form'
 gem 'devise', '~> 3.5.2'
 # user uploading images now possible   https://github.com/thoughtbot/paperclip
 gem 'paperclip', '~> 4.3.1'
+# masonry-rails https://github.com/kristianmandrup/masonry-rails
+# //= require masonry/jquery.masonry
+gem 'masonry-rails', '~> 0.2.4'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
