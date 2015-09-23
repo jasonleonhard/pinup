@@ -17,6 +17,20 @@ gem 'paperclip', '~> 4.3.1'
 # masonry-rails https://github.com/kristianmandrup/masonry-rails
 # //= require masonry/jquery.masonry
 gem 'masonry-rails', '~> 0.2.4'
+# vote on posts, have a heart https://github.com/ryanto/acts_as_votable
+# rails generate acts_as_votable:migration
+# rake db:migrate
+# pins.rb ->     acts_as_votable
+# routes.rb ->    
+  # devise_for :users
+  # resources :pins do
+  #   member do
+  #     put "like", to: "pins#upvote"
+  #   end
+  # end
+# pins_controller.rb 
+  
+gem 'acts_as_votable', '~> 0.10.0'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

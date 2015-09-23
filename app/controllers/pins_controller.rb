@@ -1,6 +1,7 @@
 class PinsController < ApplicationController
   # only use find_pin for the following:
-  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
+  before_action :authenticate_user!, except: [:index, :show] # must sign in before hearting pin
 
   # show all pins (index.html.haml)
   def index
@@ -48,12 +49,19 @@ class PinsController < ApplicationController
     end
   end
   
-  # before action finds correct pin in all of these (show edit update and destroy)
+  # before action finds_pin correct pin in all of these (show edit update and destroy)
   def destroy
     @pin.destroy
     redirect_to root_path
   end
 
+  # acts_as_votable
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to :back
+    # redirect_to root_path
+  end
+  
   private
   
   # required params as well as permitted, used in create
