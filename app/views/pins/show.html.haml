@@ -1,13 +1,21 @@
-/ show.html.haml    
 / note: haml requires = touch tag aka %h1=
-= image_tag @pin.image.url(:medium)
-
-%h1= @pin.title
-%p= @pin.description
-Submitted by 
-= @pin.user.email  # Submitted by lox@gmail.com        # for /pins/1
-
-/ = link_to "Back", root_path
-= render 'back'
-= link_to "Edit", edit_pin_path
-= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure you want to delete this pin?" }
+#pin_show.row
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      .panel-heading.pin_image
+        = image_tag @pin.image.url
+      .panel-body
+        %h1= @pin.title
+        %p.description= @pin.description
+      .panel-footer
+        .row
+          .col-md-6
+            %p.user
+              Submitted by
+              = @pin.user.email  # Submitted by lox@gmail.com        # for /pins/1
+          .col-md-6
+            .btn-group.pull-right
+              = link_to "Edit", edit_pin_path, class: "btn btn-default"
+              = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+              / = link_to "Back", root_path
+              = render 'back'
