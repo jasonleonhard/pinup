@@ -1,0 +1,24 @@
+
+# how to undo a commit the long safe way ie (undoing a commit 801fad1 with a236211)
+gitRevertTo(){ # gitRevertTo 123456
+  git log
+  # verify
+    read -p "Proceed to undo all commits back to $1?" -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+      # checkout the commit you want
+        git checkout $1
+      # create and switch to a new branch showing these changes
+        git checkout -b $1
+      # give you a visual of the differences from before
+        git diff $1 master
+      # verify
+      read -p "Are you satisfied with these changes?" -n 1 -r
+      if [[ $REPLY =~ ^[Yy]$ ]]
+      then
+        # do dangerous stuff
+        git checkout master
+        git merge $1
+      fi
+    fi
+}
