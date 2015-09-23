@@ -3,4 +3,5 @@ went ahead and merged heroku branch into master
 git branch
 git status
 git push heroku master
-heroku master
+heroku open
+heroku run rake db:migrate

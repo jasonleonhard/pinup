@@ -59,6 +59,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
 group :test do
   gem 'factory_girl_rails'
 end
@@ -111,3 +112,5 @@ group :production do
   # Use Capistrano for deployment
   # gem 'capistrano-rails', group: :development
 end
+
+# FYI the server reads the Gemfile.lock not Gemfile
