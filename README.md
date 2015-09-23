@@ -1,4 +1,4 @@
-![pinup icon](https://github.com/un5t0ppab13/golb/blob/master/app/assets/images/Screenshot.png)
+![pinup icon](https://github.com/un5t0ppab13/pinup/blob/master/app/assets/images/Screenshot.png)
 
 == README
 
