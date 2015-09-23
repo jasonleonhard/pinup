@@ -100,12 +100,12 @@ end
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+end
 
 group :production do
   # heroku
   gem 'rails_12factor'
   gem 'pg'
-
   # Use Unicorn as the app server https://github.com/defunkt/unicorn
   gem 'unicorn'
   # Use Capistrano for deployment
