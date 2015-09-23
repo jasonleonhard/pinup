@@ -1,0 +1,6 @@
+for heroku deployment
+went ahead and merged heroku branch into master
+git branch
+git status
+git push heroku master
+heroku master
