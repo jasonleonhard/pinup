@@ -32,7 +32,13 @@ gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 # https://stripe.com/docs/checkout/guides/rails
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+# easy to securely configure Rails applications.
 
+# Configuration values often include sensitive information. Figaro strives to be secure by default 
+# by encouraging a convention that keeps configuration out of Git. https://github.com/laserlemon/figaro
+# bundle install, bundle exec figaro install
+# This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
+gem 'figaro'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
