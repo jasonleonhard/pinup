@@ -1,64 +1,65 @@
 source 'https://rubygems.org'
+  # All groups
+    # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+    gem 'rails', '4.2.3'
+    # https://github.com/twbs/bootstrap-sass; bundle install 
+      # application.css.scss (ordered)
+        # @import "bootstrap-sprockets"; @import "bootstrap";
+      # application.js (ordered)
+        # //= require jquery, //= require jquery_ujs, //= require bootstrap-sprockets
+    gem 'bootstrap-sass'
+    gem 'haml', '4.0.5'
+    gem 'simple_form'
+    # recommend by rubygems.org
+    gem 'devise', '~> 3.5.2'
+    # user uploading images now possible   https://github.com/thoughtbot/paperclip
+    gem 'paperclip', '~> 4.3.1'
+    # masonry-rails https://github.com/kristianmandrup/masonry-rails
+    # //= require masonry/jquery.masonry
+    gem 'masonry-rails', '~> 0.2.4'
+    # vote on posts, have a heart https://github.com/ryanto/acts_as_votable
+    # rails generate acts_as_votable:migration
+    # rake db:migrate
+    # pins.rb ->     acts_as_votable
+    # routes.rb ->    
+      # devise_for :users
+      # resources :pins do
+      #   member do
+      #     put "like", to: "pins#upvote"
+      #   end
+      # end
+    # pins_controller.rb 
+    gem 'acts_as_votable', '~> 0.10.0'
+    # https://stripe.com/docs/checkout/guides/rails
+    gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+    # easy to securely configure Rails applications.
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
-# https://github.com/twbs/bootstrap-sass; bundle install 
-  # application.css.scss (ordered)
-    # @import "bootstrap-sprockets"; @import "bootstrap";
-  # application.js (ordered)
-    # //= require jquery, //= require jquery_ujs, //= require bootstrap-sprockets
-gem 'bootstrap-sass'
-gem 'haml', '4.0.5'
-gem 'simple_form'
-# recommend by rubygems.org
-gem 'devise', '~> 3.5.2'
-# user uploading images now possible   https://github.com/thoughtbot/paperclip
-gem 'paperclip', '~> 4.3.1'
-# masonry-rails https://github.com/kristianmandrup/masonry-rails
-# //= require masonry/jquery.masonry
-gem 'masonry-rails', '~> 0.2.4'
-# vote on posts, have a heart https://github.com/ryanto/acts_as_votable
-# rails generate acts_as_votable:migration
-# rake db:migrate
-# pins.rb ->     acts_as_votable
-# routes.rb ->    
-  # devise_for :users
-  # resources :pins do
-  #   member do
-  #     put "like", to: "pins#upvote"
-  #   end
-  # end
-# pins_controller.rb 
-gem 'acts_as_votable', '~> 0.10.0'
-# https://stripe.com/docs/checkout/guides/rails
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-# easy to securely configure Rails applications.
+    # Configuration values often include sensitive information. Figaro strives to be secure by default 
+    # by encouraging a convention that keeps configuration out of Git. https://github.com/laserlemon/figaro
+    # bundle install, bundle exec figaro install
+    # This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
+    gem 'figaro'
 
-# Configuration values often include sensitive information. Figaro strives to be secure by default 
-# by encouraging a convention that keeps configuration out of Git. https://github.com/laserlemon/figaro
-# bundle install, bundle exec figaro install
-# This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
-gem 'figaro'
+    # Use SCSS for stylesheets
+    gem 'sass-rails', '~> 5.0'
+    # Use Uglifier as compressor for JavaScript assets
+    gem 'uglifier', '>= 1.3.0'
+    # Use CoffeeScript for .coffee assets and views
+    gem 'coffee-rails', '~> 4.1.0'
+    # See https://github.com/rails/execjs#readme for more supported runtimes
+    # gem 'therubyracer', platforms: :ruby
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+    # Use jquery as the JavaScript library
+    gem 'jquery-rails'
+    # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+    gem 'turbolinks'
+    # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+    gem 'jbuilder', '~> 2.0'
+    # bundle exec rake doc:rails generates the API under doc/api.
+    gem 'sdoc', '~> 0.4.0', group: :doc
+    # Use ActiveModel has_secure_password
+    # gem 'bcrypt', '~> 3.1.7'
+  # end all groups
 
 group :test do
   gem 'factory_girl_rails'

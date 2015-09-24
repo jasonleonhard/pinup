@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+// /  / NO =  require websocket_rails/main
