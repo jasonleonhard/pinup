@@ -139,9 +139,35 @@ source 'https://rubygems.org'
     gem "better_errors"
 
     # https://github.com/thoughtbot/capybara-webkit
-    # A Capybara driver for headless WebKit to test JavaScript web apps https://thoughtbot.com/open-source
-    # gem 'capybara-webkit'
-
+    # A Capybara driver for headless WebKit (safari and chrome) to test JavaScript web apps https://thoughtbot.com/open-source
+    # https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
+    # https://www.qt.io/ Qt (/ˈkjuːt/ "cute", or unofficially as Q-T cue-tee) is a cross-platform application framework that is widely used for developing application software that can be run on various software and hardware platforms with little or no change in the underlying codebase, while having the power and speed of native applications.
+    # qmake -v
+    # which qmake
+        # rm `which qmake`
+        # qmake is /usr/local/bin/qmake
+    # xcode-select --install
+    # gem install capybara-webkit -v '1.7.1'
+    # gem install capybara-webkit -v '0.11.0'
+    # OS X 10.10 (home)
+      # brew remove qt
+      # brew update
+      # brew install qt5
+      # brew link --force qt5
+      # which qmake
+      # bi
+    # OS X 10.9 (work)
+      # brew remove qt5
+      # brew update
+      # brew install qt
+      # brew link --force qt
+      # brew unlink qt && brew link qt
+      # which qmake
+      # bi
+    # rs
+    # rspec spec/features/home_spec.rb
+    gem 'capybara-webkit'
+    
     # https://github.com/thoughtbot/factory_girl_rails
     # https://github.com/thoughtbot/factory_girl
     gem 'factory_girl_rails'
@@ -156,11 +182,12 @@ source 'https://rubygems.org'
 
     # https://github.com/DatabaseCleaner/database_cleaner
     # Strategies for cleaning databases in Ruby. Can be used to ensure a clean state for testing. http://rubygems.org/gems/database_cleaner
-    # gem 'database_cleaner'
+    # clean db from transactional specs and required for capybara-webkit runs your rails app seperately from rspec
+    gem 'database_cleaner'
 
     # https://github.com/ryanb/letter_opener
     # Preview mail in the browser instead of sending.
-    # gem 'letter_opener'
+    gem 'letter_opener'
 
     # https://github.com/rspec/rspec-rails
     # rspec-rails is a testing framework for Rails 3.x and 4.x. http://relishapp.com/rspec/rspec-rails
@@ -225,7 +252,8 @@ source 'https://rubygems.org'
     # Call 'byebug' anywhere in the code to stop execution and get a debugger console
     # gem 'byebug'
 
-    # 
+    # https://github.com/rails/web-console
+    # Rails Console on the Browser.
     # Access an IRB console on exception pages or by using <%= console %> in views
     gem 'web-console', '~> 2.0'
 
@@ -233,9 +261,8 @@ source 'https://rubygems.org'
     # Rails application preloader. Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
     gem 'spring'
 
-
-    # 
-    # 
+    # https://github.com/voormedia/rails-erd
+    # Generate Entity-Relationship Diagrams for Rails applications http://voormedia.github.io/rails-erd/
     # UML diagraming
     # https://github.com/voormedia/rails-erd -> .pdf
     # brew install graphviz
@@ -271,8 +298,8 @@ source 'https://rubygems.org'
 
   group :production do
   # heroku
-    # 
-    # 
+    # https://github.com/heroku/rails_12factor
+    # Makes running your Rails app easier. Based on the ideas behind 12factor.net
     gem 'rails_12factor'
 
     # https://github.com/ged/ruby-pg
