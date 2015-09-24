@@ -1,4 +1,4 @@
-![pinup icon](https://github.com/un5t0ppab13/pinup/blob/master/erd.pdf)
+![pinup icon](https://github.com/un5t0ppab13/pinup/blob/master/erd.png)
 
 == README
 

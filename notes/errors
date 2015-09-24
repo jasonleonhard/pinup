@@ -1,0 +1,28 @@
+# errors
+  1.ActiveRecord::NoDatabaseError
+  FATAL: database "pinup_me_development" does not exist
+
+  2. PG::ConnectionBad
+  could not connect to server: No such file or directory Is the server running locally and accepting connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+
+settings that solve both development/local and production/deployment
+  # database.yml
+    default: &default
+      adapter: postgresql
+      encoding: unicode
+      # For details on connection pooling, see rails configuration guide
+      # http://guides.rubyonrails.org/configuring.html#database-pooling
+      pool: 5
+
+    development:
+      <<: *default
+      adapter: sqlite3
+      database: pinup_me_development
+
+    test:
+      <<: *default
+      database: pinup_me_test
+
+    production:
+      username: rails
+      password: <%= ENV['PINUP_DATABASE_PASSWORD'] %>
