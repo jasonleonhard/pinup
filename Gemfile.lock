@@ -84,6 +84,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -142,6 +143,8 @@ GEM
     pry-byebug (3.2.0)
       byebug (~> 5.0)
       pry (~> 0.10)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
     rack (1.6.4)
@@ -192,6 +195,23 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rspec-core (3.3.2)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-rails (3.3.3)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
     ruby-graphviz (1.2.2)
     sass (3.4.18)
     sass-rails (5.0.4)
@@ -203,6 +223,9 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
+    simple_bdd (0.1.0)
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -260,13 +283,17 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
-  pry-rails
+  pry-nav
+  pry-rails (~> 0.3.2)
   railroady
   rails (= 4.2.3)
   rails-erd
   rails_12factor
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda-matchers
+  simple_bdd
   simple_form
   spring
   sqlite3

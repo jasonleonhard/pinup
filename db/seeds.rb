@@ -17,8 +17,9 @@ require 'ffaker'
 
 111.times do
   pin = Pin.create( 
-    :title => Faker::Name.title, #=> "Legacy Creative Director",
-    :description => Faker::Lorem.sentence(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+    :title => FFaker::Name.title, #=> "Legacy Creative Director",
+    :description => FFaker::Lorem.sentence(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+    # :user => Faker::Lorem.number(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
   )
   puts pin.inspect
 end
