@@ -190,9 +190,12 @@ source 'https://rubygems.org'
     gem 'letter_opener'
 
     # https://github.com/rspec/rspec-rails
+    # https://github.com/eliotsykes/rspec-rails-examples
     # rspec-rails is a testing framework for Rails 3.x and 4.x. http://relishapp.com/rspec/rspec-rails
     # rails generate rspec:install
     # spec/rails_helper.rb
+    # example 
+      # rspec in spec/features/root_spec.rb
     gem 'rspec-rails'
 
     # https://github.com/pry/pry
