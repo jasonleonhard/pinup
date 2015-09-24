@@ -138,14 +138,16 @@ source 'https://rubygems.org'
   end
 
   group :development do
-    # Use sqlite3 as the database for Active Record
+    # Use sqlite3 as the database for Active Record in development
     gem 'sqlite3'
   end
 
   group :production do
     # heroku
     gem 'rails_12factor'
-gem 'pg'
+    
+    # Use pg as the database for Active Record in production
+    gem 'pg'
 
     # Use Unicorn as the app server https://github.com/defunkt/unicorn
     gem 'unicorn'
