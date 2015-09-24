@@ -7,11 +7,10 @@ feature "visit homepage" do
   end
 end
 
-# spec/features/home_spec.rb
-
 # run 
   # this spec
     # rspec spec/features/home_spec.rb
+
   # all in folder
     # rspec spec/models
   # all specs

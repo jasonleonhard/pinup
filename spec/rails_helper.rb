@@ -39,7 +39,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.include SimpleBdd, type: :feature
-  # config.include Devise::TestHelpers, :type => :controller # Only when using Devise
+  config.include Devise::TestHelpers, :type => :controller # Only when using Devise
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.clean_with(:truncation)
