@@ -21,23 +21,23 @@ class Pin < ActiveRecord::Base
     # = link_to (image_tag pin.image.url(:medium)), pin
 
 
-  # sunspot search
-  searchable do
-    # simplest
-      # text :title 
-    # 3 searchable symbols with a scaled boost in speed
-    text :title, :boost => 11
-    text :description, :image # or just 1...
-    # these dont work
-      # text user: :name, :boost => 2 # text user: :email, :boost => 2
-      # text :users do
-      #   users.map(&:name) # users.map(&:email)
-      # end
-    # text :comments do
-      # comments.map(&:content)
-      # comments.map(&:title)
-      # comments.map(&:description)
-    # end
-  end # rake sunspot:reindex
+  # # sunspot search
+  # searchable do
+  #   # simplest
+  #     # text :title 
+  #   # 3 searchable symbols with a scaled boost in speed
+  #   text :title, :boost => 11
+  #   text :description, :image # or just 1...
+  #   # these dont work
+  #     # text user: :name, :boost => 2 # text user: :email, :boost => 2
+  #     # text :users do
+  #     #   users.map(&:name) # users.map(&:email)
+  #     # end
+  #   # text :comments do
+  #     # comments.map(&:content)
+  #     # comments.map(&:title)
+  #     # comments.map(&:description)
+  #   # end
+  # end # rake sunspot:reindex
 
 end

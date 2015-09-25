@@ -5,19 +5,20 @@ class PinsController < ApplicationController
 
   # show all pins (index.html.haml)
   def index
-  # sunspot search instead of just standard index show all
-    @search = Pin.search do
-      fulltext params[:search]
-    end
-    # return array of pins
-    @pins = @search.results
-    # @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+  # turns out sunspot is NOT free in Production... will look for alternatives
+  # # sunspot search instead of just standard index show all
+  #   @search = Pin.search do
+  #     fulltext params[:search]
+  #   end
+  #   # return array of pins
+  #   @pins = @search.results
+  #   # @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
 
-    # standard index 
-      # define each method to show all pins in index
-      # will render a link on index with the title of the pin
-      # .paginate()
-      # @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
+  # standard index 
+    # define each method to show all pins in index
+    # will render a link on index with the title of the pin
+    # .paginate()
+    @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
   end
 
   # view 1 pin by params

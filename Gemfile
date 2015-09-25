@@ -142,13 +142,14 @@ source 'https://rubygems.org'
     # rake sunspot:solr:start
     # rake sunspot:reindex
     # gem 'sunspot_rails'
-    gem 'sunspot_rails', '~> 2.2.0'
+    # gem 'sunspot_rails', '~> 2.2.0'
     # OPTIONAL pre-packaged Solr distribution for use in development
-    gem 'sunspot_solr', group: :development
-
+    # gem 'sunspot_solr'
+    #  heroku addons:create websolr
+    # forget it.... it costs money! find a new searchbar option
     # OPTIONAL progressbar
     # https://github.com/paul/progress_bar
-    gem 'progress_bar'
+    # gem 'progress_bar'
         
     # https://github.com/sferik/twitter        
     # A Ruby interface to the Twitter API.
