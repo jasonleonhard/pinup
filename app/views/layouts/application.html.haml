@@ -11,6 +11,13 @@
     
     .container
       .navbar-brand= link_to "Pinup", root_path
+      
+      / sunspot search form (with inline haml styling)
+      %ul.nav.navbar-nav.navbar-right.some{ :style => "margin-top: 10px;" }
+        = form_tag pins_path, method: :get do
+          = text_field_tag :search, params[:search]
+          = submit_tag "Search", name: nil
+
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           /users/new

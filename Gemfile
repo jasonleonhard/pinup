@@ -126,12 +126,29 @@ source 'https://rubygems.org'
         # https://github.com/bokmann/font-awesome-rails
         # gem "font-awesome-rails"
 
+    # https://github.com/ryanb/nifty-generators
+    # A collection of useful Rails generator scripts for scaffolding, layout files, authentication, and more.
+    # rails g nifty:scaffold Recipe name:string index new
+    # gem 'nifty-generators', '~> 0.4.6'
 
+    # https://github.com/hanklords/flickraw
+    # Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api
+    # gem 'flickraw', '~> 0.9.8'
 
-    # gem 'sunspot_rails', '~> 2.2.0'
+    # search
+    # https://github.com/sunspot/sunspot
+    # rails g sunspot_rails:install
+      # create  config/sunspot.yml
+    # rake sunspot:solr:start
+    # rake sunspot:reindex
     # gem 'sunspot_rails'
-    # gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
-
+    gem 'sunspot_rails', '~> 2.2.0'
+    # OPTIONAL pre-packaged Solr distribution for use in development
+    gem 'sunspot_solr'
+    # OPTIONAL progressbar
+    # https://github.com/paul/progress_bar
+    gem 'progress_bar'
+        
     # https://github.com/sferik/twitter        
     # A Ruby interface to the Twitter API.
     # gem 'twitter', '~> 5.15.0'
@@ -144,6 +161,7 @@ source 'https://rubygems.org'
     # not https://github.com/nov/fb_graph
     # gem 'fb_graph2'
 
+    # https://github.com/kylejginavan/youtube_it
     # An object-oriented Ruby wrapper for the YouTube GData API http://groups.google.com/group/ruby-youtube-library
     # Upload, delete, update, comment on youtube videos all from one gem.
     # gem 'youtube_it', '~> 2.4.2'
@@ -152,8 +170,18 @@ source 'https://rubygems.org'
     # Ruby wrapper for the LinkedIn API http://rdoc.info/gems/linkedin
     # gem 'linkedin', '~> 1.0.0'
 
+    # https://github.com/octokit/octokit.rb
     # Ruby toolkit for the GitHub API.
     # gem 'octokit', '~> 4.1.1'
+
+    # https://github.com/up_the_irons/ebay4r
+    # eBay4R is a Ruby wrapper for eBay's Web Services SOAP API http://rubyforge.org/projects/ebay4r/
+    # gem 'ebay', '~> 1.1'
+
+    # https://github.com/northworld/google_calendar
+    # google_calendar
+    # A minimal wrapper around the google calendar API
+    # gem 'google_calendar', '~> 0.5'
 
     # https://stripe.com/docs/checkout/guides/rails
     gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
