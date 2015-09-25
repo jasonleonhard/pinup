@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require masonry/jquery.masonry
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
 // /  / NO =  require websocket_rails/main
+// either use bootstrap-sprockets for all files seperately or bootstrap for 1 concatinated file

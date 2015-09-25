@@ -7,17 +7,20 @@ Rails.application.routes.draw do
     end
   end
 
-# gems
-  # devise
-  devise_for :users   
+  # gems
+    # devise
+    devise_for :users   
 
-  # stripe
-  resources :charges  
-end  
-  
+    # stripe
+    resources :charges  
+     
+    # frontend-generators
+    get 'stylish_portfolios/index'
+    get 'creatives/index'
 
+    # get 'https://www.github.com/un5t0ppab13' 
 
-
+end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

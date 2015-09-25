@@ -11,6 +11,10 @@ source 'https://rubygems.org'
       # application.js (ordered)
         # //= require jquery, //= require jquery_ujs, //= require bootstrap-sprockets
     gem 'bootstrap-sass'
+    # also required
+    # https://github.com/rails/sass-rails
+    # Use SCSS for stylesheets
+    gem 'sass-rails', '~> 5.0'
 
     # https://github.com/haml/haml
     # HTML Abstraction Markup Language - A Markup Haiku http://haml.info
@@ -86,6 +90,71 @@ source 'https://rubygems.org'
     # pins_controller.rb 
     gem 'acts_as_votable', '~> 0.10.0'
 
+    # https://github.com/mislav/will_paginate
+    # Pagination.        previous 1 2 3 4 next
+    # gem 'will_paginate', '~> 3.0.6'
+    # gem 'will_paginate', '~> 3.0.7'
+    gem 'will_paginate-bootstrap', '~> 1.0.1'
+
+    # https://github.com/MrPowers/frontend-generators
+    # Rake tasks to add Bootstrap, Font Awesome, and Start Bootstrap Landing Pages to a Rails app
+    # Update your Rakefile with this code:
+        # require "frontend_generators"
+        # load 'tasks/add_assets.rake'
+    # bundle exec rake add_assets:bootstrap
+        # create    /vendor/assets/javascripts/bootstrap.js
+        # create    /vendor/assets/stylesheets/bootstrap.css
+        # ......
+    # bundle exec rake add_assets:stylish_portfolio
+        # create    /app/assets/images/stylish_portfolio/...
+        # create    /app/assets/javascripts/stylish_portfolio/...
+        # create    /app/assets/stylesheets/stylish_portfolio/...
+        # create    /app/controllers/stylish_portfolios_controller.rb
+        # create    /app/views/layouts/stylish_portfolio.html.erb
+        # create    /app/views/stylish_portfolios/...
+        # create    /app/views/stylish_portfolios/index.html.erb # this one
+    # bundle exec rake add_assets:font_awesome
+        # get 'creatives/index'
+    # bundle exec rake add_assets:creative
+        # create    /app/views/creatives/index.html.erb # this one
+        # ......
+    gem 'frontend-generators', '~> 0.0.1'
+        # effectivly already included
+        # https://github.com/FortAwesome/font-awesome-sass
+        # gem 'font-awesome-sass', '~> 4.4.0'
+        # or
+        # https://github.com/bokmann/font-awesome-rails
+        # gem "font-awesome-rails"
+
+
+
+    # gem 'sunspot_rails', '~> 2.2.0'
+    # gem 'sunspot_rails'
+    # gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
+
+    # https://github.com/sferik/twitter        
+    # A Ruby interface to the Twitter API.
+    # gem 'twitter', '~> 5.15.0'
+
+    # https://github.com/arsduo/koala
+    # A lightweight, flexible library for Facebook with support for OAuth authentication, the Graph and REST APIs, realtime updates, and test users. http://developers.facebook.com/
+    # gem "koala", "~> 2.2"
+
+    # https://github.com/nov/fb_graph2
+    # not https://github.com/nov/fb_graph
+    # gem 'fb_graph2'
+
+    # An object-oriented Ruby wrapper for the YouTube GData API http://groups.google.com/group/ruby-youtube-library
+    # Upload, delete, update, comment on youtube videos all from one gem.
+    # gem 'youtube_it', '~> 2.4.2'
+
+    # https://github.com/hexgnu/linkedin
+    # Ruby wrapper for the LinkedIn API http://rdoc.info/gems/linkedin
+    # gem 'linkedin', '~> 1.0.0'
+
+    # Ruby toolkit for the GitHub API.
+    # gem 'octokit', '~> 4.1.1'
+
     # https://stripe.com/docs/checkout/guides/rails
     gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
@@ -96,10 +165,6 @@ source 'https://rubygems.org'
     # bundle install, bundle exec figaro install
     # This creates a commented config/application.yml file and adds it to your .gitignore. Add your own configuration to this file and you're done!
     gem 'figaro'
-
-    # https://github.com/rails/sass-rails
-    # Use SCSS for stylesheets
-    gem 'sass-rails', '~> 5.0'
 
     # https://github.com/lautis/uglifier
     # Use Uglifier as compressor for JavaScript assets
@@ -322,4 +387,9 @@ source 'https://rubygems.org'
     # gem 'capistrano-rails', group: :development
   end
 
-# FYI the server reads the Gemfile.lock not Gemfile
+# NOTES:
+    # FYI the server reads the Gemfile.lock not Gemfile
+    # https://www.ruby-toolbox.com/categories/rails_search
+    # https://www.ruby-toolbox.com/categories/by_name
+    # https://www.ruby-toolbox.com/categories/API_Builders
+    # https://www.ruby-toolbox.com/categories/api_clients

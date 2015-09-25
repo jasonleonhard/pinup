@@ -5,6 +5,7 @@
 / each pin have these classes
 / .box for masonry/jQuery animation pins.js.coffee
 #pins.transitions-enabled
+  / loop pins
   - @pins.each do |pin|
     .box.panel.panel-default
       = link_to (image_tag pin.image.url), pin
@@ -13,5 +14,9 @@
       %p.user
         Submitted by
         = pin.user.email
-        
+
+/ not showing yet (I believe bc not enough pins)
+/ = will_paginate @pins
+= will_paginate @pins, renderer: BootstrapPagination::Rails
+
 / = link_to "New Pin", new_pin_path
