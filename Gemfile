@@ -132,10 +132,19 @@ source 'https://rubygems.org'
     # gem 'nifty-generators', '~> 0.4.6'
 
     # https://github.com/hanklords/flickraw
+    # http://hanklords.github.io/flickraw/
     # Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api
     # gem 'flickraw', '~> 0.9.8'
 
-    # search
+    # https://github.com/commonthread/flickr_fu
+    # http://www.pixellatedvisions.com/2009/04/06/integrating-flickr-into-your-rails-website
+    # You need to first get an API key:
+    # sudo gem install flickr_fu
+
+    # rails search possiblities
+    # https://www.ruby-toolbox.com/categories/rails_search
+
+    # search bad
     # https://github.com/sunspot/sunspot
     # rails g sunspot_rails:install
       # create  config/sunspot.yml
@@ -147,6 +156,7 @@ source 'https://rubygems.org'
     # gem 'sunspot_solr'
     #  heroku addons:create websolr
     # forget it.... it costs money! find a new searchbar option
+    # https://devcenter.heroku.com/articles/websolr#install-the-add-on
     # OPTIONAL progressbar
     # https://github.com/paul/progress_bar
     # gem 'progress_bar'
@@ -154,6 +164,8 @@ source 'https://rubygems.org'
     # https://github.com/sferik/twitter        
     # A Ruby interface to the Twitter API.
     # gem 'twitter', '~> 5.15.0'
+
+    # https://www.ruby-toolbox.com/projects/tweetstream
 
     # https://github.com/arsduo/koala
     # A lightweight, flexible library for Facebook with support for OAuth authentication, the Graph and REST APIs, realtime updates, and test users. http://developers.facebook.com/
