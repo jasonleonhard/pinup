@@ -144,7 +144,8 @@ source 'https://rubygems.org'
     # gem 'sunspot_rails'
     gem 'sunspot_rails', '~> 2.2.0'
     # OPTIONAL pre-packaged Solr distribution for use in development
-    gem 'sunspot_solr'
+    gem 'sunspot_solr', group: :development
+
     # OPTIONAL progressbar
     # https://github.com/paul/progress_bar
     gem 'progress_bar'
