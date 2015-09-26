@@ -243,7 +243,11 @@ source 'https://rubygems.org'
 
   group :development, :test do
     # https://github.com/charliesome/better_errors
-    gem "better_errors"
+    gem 'better_errors'
+
+    # https://github.com/evanphx/benchmark-ips 
+    # TenderLove recommended. Provides iteration per second benchmarking for Ruby
+    gem 'benchmark-ips'
 
     # https://github.com/thoughtbot/capybara-webkit
     # A Capybara driver for headless WebKit (safari and chrome) to test JavaScript web apps https://thoughtbot.com/open-source
