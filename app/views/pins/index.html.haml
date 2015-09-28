@@ -21,8 +21,8 @@
         Submitted by
         = pin.user.email
 
-/ not showing yet (I believe bc not enough pins)
-/ = will_paginate @pins
-= will_paginate @pins, renderer: BootstrapPagination::Rails
+.container
+  / = will_paginate @pins
+  = will_paginate @pins, renderer: BootstrapPagination::Rails
 
 / = link_to "New Pin", new_pin_path

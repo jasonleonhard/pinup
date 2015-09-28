@@ -4,10 +4,12 @@ class Pin < ActiveRecord::Base
   # has_many :comments
 
   # paperclip (:image not :avatar)        # other options are....  large: "600x600>", thumb: "100x100#"
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing2.png"
+  # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing2.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/missing2.png"
+
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   # set per_page globally
-  WillPaginate.per_page = 20
+  # WillPaginate.per_page = 20
 
 
   # rails g paperclip pin image           # adding image to pin in schema
