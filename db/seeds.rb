@@ -14,10 +14,7 @@
 require 'ffaker'
 # require 'populator'
 
-<<<<<<< HEAD
 # WORKS! but no image.....
-=======
->>>>>>> master
 111.times do
   pin = Pin.create( 
     :user_id => 1,  # WORKS! but no image.....
