@@ -1,8 +1,11 @@
 class PinsController < ApplicationController
   # only use find_pin for the following:
   before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
-  before_action :authenticate_user!, except: [:index, :show] # must sign in before hearting pin
+  before_action :authenticate_user!, except: [:index, :show] # must sign in before hearting pin, editing, destroying....
+  # before_action :authorize_user!, except: [:index, :show]  # must have permissions to edit, delete, update, vote...
 
+  # before_action :require_admin, only: [:new, :create]
+  
   # show all pins (index.html.haml)
   def index
   # turns out sunspot is NOT free in Production... will look for alternatives
@@ -47,6 +50,11 @@ class PinsController < ApplicationController
 
   # renders _form
   def edit
+    if @pin.save
+      redirect_to @pin, notice: "Created new Pin!"
+    else
+      render 'new'
+    end
   end
   
   # before_action covers this, finds pin before
@@ -84,5 +92,18 @@ class PinsController < ApplicationController
   def find_pin
     @pin = Pin.find(params[:id])
   end
+
+  # before_action
+#   def authorize_user
+# #     authenticate_or_request_with_http_digest do |username|
+# #       USERS[username]
+# #     end
+#     # pin.authorized?(current_user)
+#   end
+
+  # if not authorized_user...
+  # def permission_denied
+  #   render :file => "public/401.html", :status => :unauthorized
+  # end
 
 end
