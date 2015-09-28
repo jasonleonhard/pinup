@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stripe/stripe-ruby
-  revision: 2a22605618bd8928d933d603381fe37aa88cce2d
+  revision: 30688422c49e7eb05f6cd7a8c2214e72ed04c5ca
   specs:
     stripe (1.27.2)
       json (~> 1.8.1)
@@ -155,13 +155,9 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.3)
-<<<<<<< HEAD
     polyamorous (1.2.0)
       activerecord (>= 3.0)
-    pry (0.10.1)
-=======
     pry (0.10.2)
->>>>>>> ca72849924c396d24cd1b2d2ee8e49c7acc7536e
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
@@ -220,7 +216,6 @@ GEM
       i18n
       polyamorous (~> 1.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rest-client (1.8.0)
@@ -296,6 +291,8 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.0.7)
+    will_paginate-bootstrap (1.0.1)
+      will_paginate (>= 3.0.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -345,7 +342,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)
-  will_paginate (~> 3.0.6)
+  will_paginate-bootstrap (~> 1.0.1)
 
 BUNDLED WITH
    1.10.6
