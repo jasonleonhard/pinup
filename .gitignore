@@ -18,3 +18,7 @@
 
 # Ignore application configuration (especially stripe, via figaro)
 /config/application.yml
+
+
+
+.DS_Store
