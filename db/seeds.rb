@@ -14,10 +14,11 @@
 require 'ffaker'
 # require 'populator'
 
-
+# WORKS! but no image.....
 111.times do
   pin = Pin.create( 
-    :title => FFaker::Name.title, #=> "Legacy Creative Director",
+    :user_id => 1,  # WORKS! but no image.....
+    :title => FFaker::Name.name, #=> "Legacy Creative Director",
     :description => FFaker::Lorem.sentence(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
     # :user => Faker::Lorem.number(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
   )
