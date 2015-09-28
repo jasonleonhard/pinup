@@ -96,6 +96,10 @@ source 'https://rubygems.org'
     # gem 'will_paginate', '~> 3.0.7'
     gem 'will_paginate-bootstrap', '~> 1.0.1'
 
+    # https://github.com/ffaker/ffaker
+    # Faker refactored. 
+    gem 'ffaker'
+
     # https://github.com/MrPowers/frontend-generators
     # Rake tasks to add Bootstrap, Font Awesome, and Start Bootstrap Landing Pages to a Rails app
     # Update your Rakefile with this code:
@@ -295,9 +299,9 @@ source 'https://rubygems.org'
     # https://github.com/thoughtbot/factory_girl
     gem 'factory_girl_rails'
 
-    # https://github.com/ffaker/ffaker
-    # Faker refactored. 
-    gem 'ffaker'
+    # # https://github.com/ffaker/ffaker
+    # # Faker refactored. 
+    # gem 'ffaker'
 
     # https://github.com/stympy/faker
     # A library for generating fake data such as names, addresses, and phone numbers.

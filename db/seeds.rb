@@ -1,28 +1,39 @@
-# rake db:reset db:migrate db:seed
-# rake db:reset db:migrate db:seed --trace
-# https://github.com/stympy/faker
+# rake db:reset db:migrate 
+# signup 1 user then
+# rake db:seed --trace
 
+# https://github.com/stympy/faker
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-# Examples:
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
-# db/seeds.rb impliments the faker gem to seed the db
-# require 'faker'
 require 'ffaker'
+# require 'faker'
 # require 'populator'
+# db/seeds.rb impliments the faker gem to seed the db
 
-
+# WORKS WITH IMAGE!
 111.times do
   pin = Pin.create( 
-    :title => FFaker::Name.title, #=> "Legacy Creative Director",
-    :description => FFaker::Lorem.sentence(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+    :user_id => 1,  # WORKS! but no image.....
+    :title => FFaker::Name.name, #=> "Legacy Creative Director",
+    :description => FFaker::HipsterIpsum.sentence(11), #=> 
+    # :description => FFaker::Lorem.sentence(11), #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+    # :description => FFaker::HipsterIpsum.sentence(11), #=> 
+    # :description => FFaker::HipsterIpsum.paragraph(11), #=> 
+    # :image => File.new("#{Rails.root}/app/assets/images/missing2.png") # works for 1 image
+    :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+    # randomArray = pictures.sample(pictures.length)
+    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
+
+    # photo.image = File.open(file_path)
+    # :image_file_name = File.open(Rails.root.join('doc', 'seeding', '300x220.jpg'))
+    # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/missing2.png"
     # :user => Faker::Lorem.number(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+
   )
   puts pin.inspect
 end
+
 
 # 111.times do
 #   user = User.create( 
