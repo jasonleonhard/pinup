@@ -1,5 +1,13 @@
 / %h1 Pins
 
+/ = search_form_for @search do |f|
+/   = f.label :name_cont
+/   = f.text_field :name_cont "Search"
+/   = f.submit "Search"
+/ = render "title_search_box"
+/ = yield(:search)
+
+
 / sunspot search form 
 / in application.html.haml
 / = form_tag pins_path, method: :get do
@@ -23,6 +31,6 @@
 
 / not showing yet (I believe bc not enough pins)
 / = will_paginate @pins
-= will_paginate @pins, renderer: BootstrapPagination::Rails
+/ = will_paginate @pins, renderer: BootstrapPagination::Rails
 
 / = link_to "New Pin", new_pin_path

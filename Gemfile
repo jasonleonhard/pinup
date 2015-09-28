@@ -249,6 +249,18 @@ source 'https://rubygems.org'
     # TenderLove recommended. Provides iteration per second benchmarking for Ruby
     gem 'benchmark-ips'
 
+    # https://github.com/activerecord-hackery/ransack
+    # Object-based searching. With maintenance by @radar and @jonatack! http://ransack-demo.heroku.com
+    gem 'ransack'
+
+    # https://github.com/seattlerb/minitest
+    # Test written like ruby
+    gem 'minitest', '~> 5.8.1'
+
+    # https://github.com/sparklemotion/nokogiri
+    # Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser with XPath and CSS selector support. http://nokogiri.org/
+    # gem 'nokogiri'
+
     # https://github.com/thoughtbot/capybara-webkit
     # A Capybara driver for headless WebKit (safari and chrome) to test JavaScript web apps https://thoughtbot.com/open-source
     # https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit
