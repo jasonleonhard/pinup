@@ -14,7 +14,6 @@
 require 'ffaker'
 # require 'populator'
 
-
 111.times do
   pin = Pin.create( 
     :title => FFaker::Name.title, #=> "Legacy Creative Director",
