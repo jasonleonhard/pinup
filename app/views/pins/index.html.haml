@@ -31,13 +31,14 @@
         Submitted by
         = pin.user.email
 
-.text-center
-  .pagination
-    = will_paginate @pins, renderer: BootstrapPagination::Rails 
-    / = will_paginate @pins // works fine but better with bootstrap above
+/ .text-center
+/   .pagination
+/     = will_paginate @pins, renderer: BootstrapPagination::Rails 
+/     / = will_paginate @pins // works fine but better with bootstrap above
+
 / or
 / _footer.html.haml
-/ = render 'footer' 
+= render 'footer' 
 
 / / = link_to "New Pin", new_pin_path
 

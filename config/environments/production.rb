@@ -46,7 +46,7 @@ Rails.application.configure do
           # heroku rake db:migrate
           # bundle exec rake assets:precompile
           # sync " HEROKU DEPLOYMENT CONFIGURATON  "
-          # gem install taps
+          # gem install taps; heroku run db:push 
           # Gemfile add taps....
           # heroku rake db:migrate
           # git push heroku master
@@ -54,6 +54,10 @@ Rails.application.configure do
           # heroku db:push 
             # or
           # heroku run rake db:push 
+            #  or
+          # gem install taps; heroku rake db:push 
+          # or 
+            # heroku run rake
           # push sqlite development db to:
                            # pg production db! 
           # https://www.youtube.com/watch?v=p_3dIPgXgkg
