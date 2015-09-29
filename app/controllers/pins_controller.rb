@@ -9,9 +9,9 @@ class PinsController < ApplicationController
   # show all pins (index.html.haml)
   def index
     # :q hash of all params user passes in with ransack
-    @search = Pin.search(params[:q]) 
-    # return array of pins
-    @pins = @search.result
+    # @search = Pin.search(params[:q]) 
+    # # return array of pins
+    # @pins = @search.result
 
   # turns out sunspot is NOT free in Production... will look for alternatives
   # # sunspot search instead of just standard index show all
