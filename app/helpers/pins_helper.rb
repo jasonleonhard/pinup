@@ -10,9 +10,10 @@
 
 # You can clean it up a little bit and put it into a helper. 
 module PinsHelper
-  def user_email(user)
-    user.email if user && user.email.present?
-  end
+  # example
+  # def user_email(user)
+  #   user.email if user && user.email.present?
+  # end
 end
 
 # And then in the view code, you call the helper method and pass it the user as an argument. 
