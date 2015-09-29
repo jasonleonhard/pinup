@@ -1,0 +1,4 @@
+.text-center
+  .pagination
+    / = will_paginate @pins // works fine but better with bootstrap below
+    = will_paginate @pins, renderer: BootstrapPagination::Rails 

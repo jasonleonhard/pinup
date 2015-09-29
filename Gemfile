@@ -245,6 +245,10 @@ source 'https://rubygems.org'
     # gem 'bcrypt', '~> 3.1.7'
   # end all groups
 
+    # https://github.com/sparklemotion/nokogiri
+    # screen/html parsing/scraping if not using an api
+    gem 'nokogiri', '~> 1.6.6.2'
+
   group :development, :test do
     # https://github.com/charliesome/better_errors
     gem 'better_errors'

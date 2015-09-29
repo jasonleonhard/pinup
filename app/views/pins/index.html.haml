@@ -21,8 +21,8 @@
         Submitted by
         = pin.user.email
 
-.container
-  / = will_paginate @pins
-  = will_paginate @pins, renderer: BootstrapPagination::Rails
+/ _footer.html.haml
+= render 'footer' 
 
-/ = link_to "New Pin", new_pin_path
+
+/ / = link_to "New Pin", new_pin_path
