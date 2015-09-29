@@ -9,7 +9,7 @@
   # ?????????? heroku run rake db:create 
   #  heroku run rake db:migrate
     # signup 1 user then
-  # heroku run rake db:seed 
+  # heroku run rake db:seed # does this on the server bundle exec rake db:seed
 
   # possible trouble shooting cmd line 
               # ?????? heroku run rake db:reset 
@@ -27,19 +27,20 @@ require 'ffaker'
 # db/seeds.rb impliments the faker gem to seed the db
 
 # WORKS WITH IMAGE!
-40.times do
+20.times do
   pin = Pin.create( 
     :user_id => 1,  # WORKS! but no image.....
     :title => FFaker::Name.name, #=> "Legacy Creative Director",
     :description => FFaker::HipsterIpsum.sentence(11), #=> 
     # :description => FFaker::Lorem.sentence(11), #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
-    # :description => FFaker::HipsterIpsum.sentence(11), #=> 
-    # :description => FFaker::HipsterIpsum.paragraph(11), #=> 
     # :image => File.new("#{Rails.root}/app/assets/images/missing2.png") # works for 1 image
-  # rake db:seed --trace
-    :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+  # rake db:seed --trace 
+    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
   # # heroku run rake db:seed --trace
-    # :image => File.new("#{Rails.root}/app/assets/images/random*.jpg") # works for 1 image
+    :image => File.new(Dir["app/assets/images/random/*"].sample)
+    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
+    # :image => File.new(Dir["#{Rails.root}app/assets/images/random/*.jpg"].sample)
+    # :image => File.new("#{Rails.root}/app/assets/images/random*.jpg") 
     # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
     # :image => File.new(Dir["app/assets/images/random/*"].sample)
 
