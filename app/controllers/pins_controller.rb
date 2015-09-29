@@ -27,7 +27,7 @@ class PinsController < ApplicationController
     # will render a link on index with the title of the pin
     # .paginate()
     # @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 7)
-    @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 20)
+    @pins = Pin.all.order("created_at DESC").paginate(page: params[:page], per_page: 11)
   end
 
   # view 1 pin by params
