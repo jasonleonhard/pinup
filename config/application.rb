@@ -26,7 +26,7 @@ module Pinup
 
 
     # By default Rails 4 will not serve your assets. To enable this functionality you need to go into config/application.rb and add this line:
-        # config.serve_static_assets = true
+        config.serve_static_files = true
     # Alternatively you can achieve the same result by including the rails_12factor gem in your Gemfile:
         # gem 'rails_12factor', group: :production
         # This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
