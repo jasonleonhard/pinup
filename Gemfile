@@ -259,7 +259,7 @@ source 'https://rubygems.org'
 
     # https://github.com/activerecord-hackery/ransack
     # Object-based searching. With maintenance by @radar and @jonatack! http://ransack-demo.heroku.com
-    gem 'ransack'
+    # gem 'ransack'
 
     # https://github.com/seattlerb/minitest
     # Test written like ruby

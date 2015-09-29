@@ -155,8 +155,6 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.3)
-    polyamorous (1.2.0)
-      activerecord (>= 3.0)
     pry (0.10.2)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -209,12 +207,6 @@ GEM
     rainbow (2.0.0)
     raindrops (0.15.0)
     rake (10.4.2)
-    ransack (1.7.0)
-      actionpack (>= 3.0)
-      activerecord (>= 3.0)
-      activesupport (>= 3.0)
-      i18n
-      polyamorous (~> 1.2)
     rdoc (4.2.0)
       json (~> 1.4)
     responders (2.1.0)
@@ -330,7 +322,6 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails-erd
   rails_12factor
-  ransack
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
