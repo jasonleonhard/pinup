@@ -249,6 +249,11 @@ source 'https://rubygems.org'
     # screen/html parsing/scraping if not using an api
     gem 'nokogiri', '~> 1.6.6.2'
 
+  group :test do
+    # Pretty print test output
+    gem 'turn', :require => false
+  end
+  
   group :development, :test do
     # https://github.com/charliesome/better_errors
     gem 'better_errors'
