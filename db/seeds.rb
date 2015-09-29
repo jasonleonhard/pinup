@@ -1,6 +1,17 @@
-# rake db:reset db:migrate 
-# signup 1 user then
-# rake db:seed --trace
+# DEVELOPMENT
+  # rake db:reset db:migrate 
+  # signup 1 user then
+  # rake db:seed --trace
+# PRODUTION
+  # heroku pg:reset DATABASE 
+    # levelupr
+  # heroku rake db:migrate 
+  # signup 1 user then
+  # rake db:seed 
+
+
+  # heroku run rake db:create db:migrate
+  # heroku run rake db:seed --trace
 
 # https://github.com/stympy/faker
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -12,7 +23,7 @@ require 'ffaker'
 # db/seeds.rb impliments the faker gem to seed the db
 
 # WORKS WITH IMAGE!
-111.times do
+40.times do
   pin = Pin.create( 
     :user_id => 1,  # WORKS! but no image.....
     :title => FFaker::Name.name, #=> "Legacy Creative Director",
@@ -21,7 +32,11 @@ require 'ffaker'
     # :description => FFaker::HipsterIpsum.sentence(11), #=> 
     # :description => FFaker::HipsterIpsum.paragraph(11), #=> 
     # :image => File.new("#{Rails.root}/app/assets/images/missing2.png") # works for 1 image
+  # rake db:seed --trace
     :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+  # # heroku run rake db:seed 
+    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+
     # randomArray = pictures.sample(pictures.length)
     # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
 
