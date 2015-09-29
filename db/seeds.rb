@@ -5,11 +5,13 @@
 
 # PRODUTION
   # heroku pg:reset DATABASE --confirm levelupr
-  #  heroku run rake db:migrate
-    # signup 1 user then
-  # heroku run rake db:seed # does this on the server bundle exec rake db:seed
+  # heroku run rake db:migrate
+  # signup 1 user then
+  # ? heroku run rake db:push 
+  # ? heroku run rake db:seed # does this on the server bundle exec rake db:seed
 
   # possible trouble shooting cmd line 
+    # heroku run rake db:migrate
               # ?????? heroku run rake db:reset 
               # ?????? heroku restart
               # ?????????? heroku run rake db:create 
