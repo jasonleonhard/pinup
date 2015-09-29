@@ -434,6 +434,7 @@ source 'https://rubygems.org'
   # heroku
     # https://github.com/heroku/rails_12factor
     # Makes running your Rails app easier. Based on the ideas behind 12factor.net
+    # https://devcenter.heroku.com/articles/rails-4-asset-pipeline
     gem 'rails_12factor'
 
     # https://github.com/ged/ruby-pg

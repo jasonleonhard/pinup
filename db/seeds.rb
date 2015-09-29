@@ -4,9 +4,7 @@
   # rake db:seed --trace
 
 # PRODUTION
-  # heroku pg:reset DATABASE 
-    # levelupr
-  # ?????????? heroku run rake db:create 
+  # heroku pg:reset DATABASE --confirm levelupr
   #  heroku run rake db:migrate
     # signup 1 user then
   # heroku run rake db:seed # does this on the server bundle exec rake db:seed
@@ -14,7 +12,7 @@
   # possible trouble shooting cmd line 
               # ?????? heroku run rake db:reset 
               # ?????? heroku restart
-              # heroku run rake db:create db:migrate
+              # ?????????? heroku run rake db:create 
               # heroku run rake db:seed --trace
 
 # https://github.com/stympy/faker
@@ -31,32 +29,21 @@ require 'ffaker'
   pin = Pin.create( 
     :user_id => 1,  # WORKS! but no image.....
     :title => FFaker::Name.name, #=> "Legacy Creative Director",
-    :description => FFaker::HipsterIpsum.sentence(11), #=> 
-    # :description => FFaker::Lorem.sentence(11), #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+    :description => FFaker::HipsterIpsum.sentence(11), #=> # :description => FFaker::Lorem.sentence(11), #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
     # :image => File.new("#{Rails.root}/app/assets/images/missing2.png") # works for 1 image
-  # rake db:seed --trace 
-    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
-  # # heroku run rake db:seed --trace
-    :image => File.new(Dir["app/assets/images/random/*"].sample)
-    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
-    # :image => File.new(Dir["#{Rails.root}app/assets/images/random/*.jpg"].sample)
-    # :image => File.new("#{Rails.root}/app/assets/images/random*.jpg") 
-    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
-    # :image => File.new(Dir["app/assets/images/random/*"].sample)
-
-
-    # randomArray = pictures.sample(pictures.length)
-    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
-
+    
+    # rake db:seed --trace 
+    # or # heroku run rake db:seed --trace
+      :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+      # :image => File.new(Dir["#{Rails.root}app/assets/images/random/*.jpg"].sample)
+  
     # photo.image = File.open(file_path)
     # :image_file_name = File.open(Rails.root.join('doc', 'seeding', '300x220.jpg'))
     # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/missing2.png"
     # :user => Faker::Lorem.number(11) #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
-
   )
   puts pin.inspect
 end
-
 
 # 111.times do
 #   user = User.create( 

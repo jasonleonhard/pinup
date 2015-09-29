@@ -22,5 +22,13 @@ module Pinup
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+
+
+    # By default Rails 4 will not serve your assets. To enable this functionality you need to go into config/application.rb and add this line:
+        config.serve_static_assets = true
+    # Alternatively you can achieve the same result by including the rails_12factor gem in your Gemfile:
+        # gem 'rails_12factor', group: :production
+        # This gem will configure your application to serve static assets so that you do not need to do this manually in a config file.
   end
 end

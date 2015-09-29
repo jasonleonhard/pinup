@@ -54,13 +54,15 @@ class PinsController < ApplicationController
     end
   end
 
-  # renders _form
+  # renders edit.html.haml with _form, no need for defining more 
   def edit
-    if @pin.save
-      redirect_to @pin, notice: "Created new Pin!"
-    else
-      render 'new'
-    end
+    # @user = User.find(params[:id])
+
+    # if @pin.save
+    #   redirect_to @pin, notice: "Edited Pin!"
+    # else
+    #   render 'edit'
+    # end
   end
   
   # before_action covers this, finds pin before
