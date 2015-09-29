@@ -18,25 +18,29 @@
 / render all pins on index page
 / each pin have these classes
 / .box for masonry/jQuery animation pins.js.coffee
+
+/ loop pins
+  / = link_to (image_tag pin.image.url(:medium)), pin is an alternate
+
 #pins.transitions-enabled
-  / loop pins
   - @pins.each do |pin|
     .box.panel.panel-default
       = link_to (image_tag pin.image.url), pin
-      / = link_to (image_tag pin.image.url(:medium)), pin
       %h2= link_to pin.title, pin
       %p.user
         Submitted by
         = pin.user.email
 
-/ _footer.html.haml
-  / = render 'footer' 
-/ or
 
 .text-center
   .pagination
     = will_paginate @pins, renderer: BootstrapPagination::Rails 
     / = will_paginate @pins // works fine but better with bootstrap above
+
+/ or
+/ _footer.html.haml
+  / = render 'footer' 
+
 
 / / = link_to "New Pin", new_pin_path
 
