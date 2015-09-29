@@ -1,17 +1,21 @@
 # DEVELOPMENT
   # rake db:reset db:migrate 
-  # signup 1 user then
+    # signup 1 user then
   # rake db:seed --trace
+
 # PRODUTION
   # heroku pg:reset DATABASE 
     # levelupr
-  # heroku rake db:migrate 
-  # signup 1 user then
-  # rake db:seed 
+  # ?????????? heroku run rake db:create 
+  #  heroku run rake db:migrate
+    # signup 1 user then
+  # heroku run rake db:seed 
 
-
-  # heroku run rake db:create db:migrate
-  # heroku run rake db:seed --trace
+  # possible trouble shooting cmd line 
+              # ?????? heroku run rake db:reset 
+              # ?????? heroku restart
+              # heroku run rake db:create db:migrate
+              # heroku run rake db:seed --trace
 
 # https://github.com/stympy/faker
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -34,8 +38,11 @@ require 'ffaker'
     # :image => File.new("#{Rails.root}/app/assets/images/missing2.png") # works for 1 image
   # rake db:seed --trace
     :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
-  # # heroku run rake db:seed 
-    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+  # # heroku run rake db:seed --trace
+    # :image => File.new("#{Rails.root}/app/assets/images/random*.jpg") # works for 1 image
+    # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
+    # :image => File.new(Dir["app/assets/images/random/*"].sample)
+
 
     # randomArray = pictures.sample(pictures.length)
     # :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
