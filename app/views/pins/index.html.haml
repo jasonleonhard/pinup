@@ -30,8 +30,12 @@
         = pin.user.email
 
 / _footer.html.haml
-= render 'footer' 
-
+  / = render 'footer' 
+/ or
+.text-center
+  .pagination
+    = will_paginate @pins, renderer: BootstrapPagination::Rails 
+    / = will_paginate @pins // works fine but better with bootstrap above
 
 / / = link_to "New Pin", new_pin_path
 
