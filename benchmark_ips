@@ -1,3 +1,6 @@
+# itterations per second, how slow?
+# See Below:
+
 #!/usr/bin/env ruby
 require 'benchmark/ips'
 
@@ -36,3 +39,25 @@ Benchmark.ips do |x|
   # Compare the iterations per second of the various reports!
   x.compare!
 end
+
+# 9/26/15
+# 
+# ./benchmark_ips 
+# Calculating -------------------------------------
+#             addition   173.824k i/100ms
+#            addition2   175.891k i/100ms
+#            addition3   206.506k i/100ms
+# addition-test-long-label
+#                        173.389k i/100ms
+# -------------------------------------------------
+#             addition     11.228M (± 3.6%) i/s -     56.145M
+#            addition2     40.210M (± 5.9%) i/s -    200.164M
+#            addition3     40.122M (± 6.4%) i/s -    199.485M
+# addition-test-long-label
+#                          11.134M (± 5.6%) i/s -     55.484M
+
+# Comparison:
+#            addition2: 40209912.5 i/s
+#            addition3: 40121767.5 i/s - 1.00x slower
+#             addition: 11227783.7 i/s - 3.58x slower
+# addition-test-long-label: 11134419.5 i/s - 3.61x slower

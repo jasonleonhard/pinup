@@ -8,9 +8,10 @@
 %body
   / navbar    consider creating a _navbar partial
   %nav.navbar.navbar-default
-    
     .container
       .navbar-brand= link_to "Pinup", root_path
+      / ransack search form (with inline haml styling)
+      %ul.nav.navbar-nav.navbar-right.some{ :style => "margin-top: 10px;" }
       / sunspot search form (with inline haml styling)
       / %ul.nav.navbar-nav.navbar-right.some{ :style => "margin-top: 10px;" }
       /   = form_tag pins_path, method: :get do
