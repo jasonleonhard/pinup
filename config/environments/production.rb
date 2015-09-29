@@ -29,8 +29,31 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
-
+            # config.assets.compile = false # by default
+  ########################################################################################################
+  # HEROKU DEPLOYMENT CONFIGURATON: I needed to combine several solutions to make this work, here is what I did:
+    # Gemfile
+      # gem 'rails_12factor', group: :production
+    # in my Heroku console
+      # heroku labs:enable user-env-compile -a yourapp
+    # production.rb
+      # config.serve_static_assets = true # replaced by
+        config.serve_static_files = true
+      config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+      config.assets.compile = true
+    # I didn't need to precompile the assets locally. but if you wanted to...
+      # bundle exec rake assets:precompile
+  # HEROKU DEPLOYMENT CONFIGURATON ENDS
+          # heroku rake db:migrate
+          # bundle exec rake assets:precompile
+          # sync " HEROKU DEPLOYMENT CONFIGURATON  "
+          
+          # gem install taps
+          # heroku rake db:migrate
+          # heroku db:push # push sqlite development db to:
+                           # pg production db! 
+  ########################################################################################################
+  
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
