@@ -56,6 +56,7 @@ Rails.application.configure do
           # heroku run rake db:push 
           # push sqlite development db to:
                            # pg production db! 
+          # https://www.youtube.com/watch?v=p_3dIPgXgkg
   ########################################################################################################
   
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
