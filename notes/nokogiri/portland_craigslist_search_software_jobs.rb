@@ -7,7 +7,7 @@ require 'open-uri'
 # resource: http://www.nokogiri.org/tutorials/parsing_an_html_xml_document.html
 
 # Fetch and parse HTML document
-doc = Nokogiri::HTML(open('http://www.walmart.com/search/?query=electronics%20sale'))
+doc = Nokogiri::HTML(open('https://portland.craigslist.org/search/sof'))
 
 ####
 # Search for nodes by css
@@ -25,7 +25,7 @@ doc = Nokogiri::HTML(open('http://www.walmart.com/search/?query=electronics%20sa
 #     puts link.content
 # end
 
-doc.css('.price-display , .js-product-title').each do |link|
+doc.css('.hdrlnk').each do |link|
     puts link.content
 end
 

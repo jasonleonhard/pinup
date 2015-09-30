@@ -1,0 +1,13 @@
+server = %w'192.168.150.254
+192.168.150.251
+192.168.120.1
+192.168.120.2'
+
+File.open('/test/test2.out','w') do |s|
+  server.each do |p|
+    r = `ping -a -n 1 #{p}`
+    puts r
+  end
+end
+
+https://www.youtube.com/watch?v=Ny0Mnts0EN0
