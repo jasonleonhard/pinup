@@ -7,7 +7,7 @@ require 'open-uri'
 
 class Query
   # Fetch and parse HTML document
-  @doc = Nokogiri::HTML(open('https://www.etsy.com/'))
+  @doc = Nokogiri::HTML(open('http://www.walmart.com/search/?query=electronics%20sale'))
 
   # user input version
   # doc = Nokogiri::HTML(open(url))
