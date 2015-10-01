@@ -138,10 +138,10 @@ textarea {
   min-height: 250px;
 }
 
-// a:hover {
-//   // color: red;
-//   opacity: 0.4;
-//   background: white;
-//   // background: grey;
-//   // background: black;
-// }
+.pagination {
+  ul li:hover {
+    opacity: 0.9;
+    background: white;
+    box-shadow: 5px 5px 5px 5px;
+  }
+}
