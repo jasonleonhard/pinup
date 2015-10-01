@@ -63,6 +63,13 @@ nav {
       padding: 25px 10px;
       a {
         color: #474747;
+        text-decoration: none;
+      }
+      a:hover {
+        opacity: 0.4;
+        background: white;
+        // background: grey;
+        // background: black;
       }
     }
     .user {
@@ -71,6 +78,16 @@ nav {
       padding: 15px;
       margin: 0;
     }
+    p:hover {
+      opacity: 0.4;
+      background: white;
+      // background: grey;
+      // background: black;
+    }
+  }
+  .box:hover {
+    opacity: 0.92;
+    // border-color: white;
   }
 }
 
@@ -120,3 +137,11 @@ nav {
 textarea {
   min-height: 250px;
 }
+
+// a:hover {
+//   // color: red;
+//   opacity: 0.4;
+//   background: white;
+//   // background: grey;
+//   // background: black;
+// }
