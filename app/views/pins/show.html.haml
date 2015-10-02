@@ -23,3 +23,46 @@
                 = link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
                 = render 'back'
                 / = link_to "Back", root_path
+
+  / Add comments 
+  .col-md-8.col-md-offset-2
+    .panel.panel-default
+      / %p#notice= notice
+      .panel-body
+        %h2 Add a comment:
+        / = form_for([@pin, @pin.comments.build]) do |f|
+        / = simple_form_for([@pin, @pin.comments.build]) do |f|
+        = simple_form_for([@pin, @pin.comments.build]) do |f|
+          .panel-footer
+            .row
+              .col-md-6
+                .field
+                  / = f.text_field :commenter, input_html: { class: 'field' }
+                  / = params[:id].to_s
+                  / = current_user.id.to_s
+                  = f.label :commenter, input_html: { class: 'field' }
+                  %br
+                  = current_user.email
+                .field
+                  = f.label :body, input_html: { class: 'field' }
+                  %br
+                  / = f.text_area :body, input_html: { class: 'field' }
+                  = f.text_field :body, input_html: { class: 'field' }
+                .field
+                  = f.submit
+
+  / View Comments
+  - unless @pin.comments == 0
+    .col-md-8.col-md-offset-2
+      .panel.panel-default                  
+        .panel-body
+          - @pin.comments.each do |comment|
+            / Commenter: #{comment.commenter}
+            %b Commenter: #{comment.pin.user.email}
+            .panel-footer
+              Comment: #{comment.body}
+            .field
+              / = link_to 'Destroy Comment', [comment.pin], comment], :confirm => 'Delete Comment?', :method => :delete
+                #{link_to 'Destroy Comment', [comment.pin, comment], :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-xs btn-default'}
+            %br
+

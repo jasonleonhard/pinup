@@ -1,7 +1,7 @@
 class Pin < ActiveRecord::Base
   acts_as_votable
   belongs_to :user
-  # has_many :comments
+  has_many :comments, :dependent => :destroy
 
   # paperclip (:image not :avatar)        # other options are....  large: "600x600>", thumb: "100x100#"
   # has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing2.png"

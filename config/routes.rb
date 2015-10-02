@@ -5,11 +5,15 @@ Rails.application.routes.draw do
     member do
       put "like", to: "pins#upvote"
     end
+    resources :comments
   end
-
+  
   # gems
     # devise
-    devise_for :users   
+    # devise_for :users
+    devise_for :users do
+      resources :comments
+    end
 
     # stripe
     resources :charges  
