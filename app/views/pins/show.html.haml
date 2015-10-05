@@ -65,8 +65,12 @@
         .panel-body
           - @pin.comments.each do |comment|
             / Commenter: #{comment.commenter} # not correct, needs to show comment creator
-            %b Commenter: #{comment.pin.user.email}
-            / %b Commenter: #{comment.user.email}
+            / %b Commenter: #{comment.pin.user.email}
+            %b Commenter: #{comment.user_id}       
+            / below options do not work
+            / %b Commenter: #{comment.user_email}
+            / %b Commenter: #{comment.user_name}
+
             .panel-footer
               Comment: #{comment.body}
             .field
