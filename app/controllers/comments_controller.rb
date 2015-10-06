@@ -25,8 +25,14 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @pin = Pin.find(params[:pin_id])                  # find pin by id that comment is attached to and saved into variable
-    @pin.user = current_user
-    @comment = @pin.comments.create(comment_params)   # create and save comment 
+    @comment = @pin.comments.create(comment_params) # create and save comment 
+      # @comment = @pin.comments.new(comment_params)      # create and save comment 
+    # @pin.user = current_user
+      # @comment.user_email = current_user.email      # no
+      # @comment.user_name = current_user.user_name   # no
+      @comment.user_id = current_user.id
+      @comment.save
+      # @comment.commenter = current_user
     redirect_to pin_path(@pin)                        # redirect, display other comments associated with it
 
     # @comment = Comment.new(comment_params)
@@ -78,6 +84,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:user_name, :body, :idea_id, :id)
+      params.require(:comment).permit(:user_name, :body, :idea_id, :id, :email)
     end
 end

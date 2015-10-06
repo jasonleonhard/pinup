@@ -11,8 +11,12 @@
         .row
           .col-md-6
             %p.user
-              Submitted by
-              = @pin.user.email  # Submitted by lox@gmail.com        # for /pins/1
+              Submitted by:
+              - if user_signed_in?
+                = @pin.user.email  # Submitted by lox@gmail.com        # for /pins/1
+              - else 
+                = link_to "Sign In", new_user_session_path, class: "btn btn-default btn-xs"
+
           .col-md-6
             .btn-group.pull-right 
               = link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do # acts_as_votable, using heart glyph
@@ -42,7 +46,10 @@
                   / = current_user.id.to_s
                   = f.label :commenter, input_html: { class: 'field' }
                   %br
-                  = current_user.email
+                  - if user_signed_in?
+                    = current_user.email
+                  - else 
+                    = link_to "Sign In", new_user_session_path, class: "btn btn-default btn-xs"
                 .field
                   = f.label :body, input_html: { class: 'field' }
                   %br
@@ -57,8 +64,13 @@
       .panel.panel-default                  
         .panel-body
           - @pin.comments.each do |comment|
-            / Commenter: #{comment.commenter}
-            %b Commenter: #{comment.pin.user.email}
+            / Commenter: #{comment.commenter} # not correct, needs to show comment creator
+            / %b Commenter: #{comment.pin.user.email}
+            %b Commenter: #{comment.user_id}       
+            / below options do not work
+            / %b Commenter: #{comment.user_email}
+            / %b Commenter: #{comment.user_name}
+
             .panel-footer
               Comment: #{comment.body}
             .field
