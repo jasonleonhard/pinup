@@ -1,29 +1,16 @@
-# DEVELOPMENT
-  # rake db:reset db:migrate 
-    # signup 1 user then
-  # rake db:seed --trace
-
-# PRODUTION
-  # heroku pg:reset DATABASE --confirm levelupr
-  # heroku run rake db:migrate
-  # signup 1 user then
-  # ? heroku run rake db:seed # does this on the server bundle exec rake db:seed
-
-  # possible trouble shooting cmd line 
-    # heroku run rake db:migrate
-              # ?????? heroku run rake db:reset 
-              # ?????? heroku restart
-              # ?????????? heroku run rake db:create 
-              # heroku run rake db:seed --trace
-
-# https://github.com/stympy/faker
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-
 require 'ffaker'
 # require 'faker'
 # require 'populator'
 # db/seeds.rb impliments the faker gem to seed the db
+
+# # create 1 user
+# user = User.create(
+#     :email => 'fakeEmail@gmail.com',
+#     :encrypted_password => FFaker::Name.name, #=> "Legacy Creative Director",
+#     :description => FFaker::HipsterIpsum.sentence(11), #=> # :description => FFaker::Lorem.sentence(11), #=> Corporis iusto vel reiciendis ut tenetur qui eos officiis rerum at consectetur.  
+#     :image => File.new(Dir["app/assets/images/random/*.jpg"].sample)
+#   )
+# puts user.inspect
 
 # WORKS WITH IMAGE!
 20.times do
@@ -35,7 +22,7 @@ require 'ffaker'
     
     # rake db:seed --trace 
     # or # heroku run rake db:seed --trace
-      :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
+    :image => File.new(Dir["app/assets/images/random/*.jpg"].sample) # BEST, random image from folder called random
       # :image => File.new(Dir["#{Rails.root}app/assets/images/random/*.jpg"].sample)
   
     # photo.image = File.open(file_path)
@@ -136,3 +123,27 @@ end
 #   )
 #   puts comment.inspect
 # end
+
+
+# DEVELOPMENT
+  # rake db:reset db:migrate 
+    # signup 1 user then
+  # rake db:seed --trace
+
+# PRODUTION
+  # heroku pg:reset DATABASE --confirm levelupr
+  # heroku run rake db:migrate
+  # signup 1 user then
+  # ? heroku run rake db:seed # does this on the server bundle exec rake db:seed
+
+  # possible trouble shooting cmd line 
+    # heroku run rake db:migrate
+              # heroku run rake db:reset 
+              # heroku restart
+              # heroku run rake db:create 
+              # heroku run rake db:seed --trace
+              # heroku rake assets:precompile
+
+# https://github.com/stympy/faker
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).

@@ -39,12 +39,9 @@ Rails.application.configure do
     # production.rb
                 # config.serve_static_files = true
                 # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
-# faster but not better
-config.assets.compile = false
-# slower but better
-# config.assets.compile = true
-
-    # I didn't need to precompile the assets locally. but if you wanted to...
+  config.assets.compile = true
+  config.assets.digest = true
+      # I didn't need to precompile the assets locally. but if you wanted to...
       # bundle exec rake assets:precompile
   # HEROKU DEPLOYMENT CONFIGURATON ENDS
           # heroku rake db:migrate
